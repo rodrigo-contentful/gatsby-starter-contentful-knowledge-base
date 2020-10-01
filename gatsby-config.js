@@ -26,6 +26,7 @@ module.exports = {
                   contentful_id
                   title
                   metaDescription
+                  Body
                   slug
                   category: kbAppCategory {
                     slug
@@ -41,8 +42,8 @@ module.exports = {
         normalizer: ({ data }) =>
           data.articles.nodes.map((node) => ({
             id: node.contentful_id,
-            // name: `${node.title}-${node.metaDescription}`,
-            name: node.title,
+            name: `${node.title} - ${node.metaDescription}`,
+            // name: node.title,
             searchBy: node.metaDescription,
             path: `/${node.category.slug}/${node.slug}/`,
           })),
