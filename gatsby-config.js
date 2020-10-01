@@ -26,7 +26,6 @@ module.exports = {
                   contentful_id
                   title
                   metaDescription
-                  Body
                   slug
                   category: kbAppCategory {
                     slug
