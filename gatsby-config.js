@@ -36,12 +36,14 @@ module.exports = {
           `,
 
         ref: 'id',
-        index: ['name'],
+        index: ['name','searchBy'],
         store: ['name', 'path'],
         normalizer: ({ data }) =>
           data.articles.nodes.map((node) => ({
             id: node.contentful_id,
-            name: `${node.title}-${node.metaDescription}`,
+            // name: `${node.title}-${node.metaDescription}`,
+            name: node.title,
+            searchBy: node.metaDescription,
             path: `/${node.category.slug}/${node.slug}/`,
           })),
       },
